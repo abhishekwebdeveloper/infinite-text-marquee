@@ -1,0 +1,28 @@
+.ar-marquee {
+  --gap: 1rem;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  justify-content: center;
+}
+
+.ar-marquee__content {
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--gap);
+  animation: ar-marquee-scroll var(--duration) infinite linear;
+}
+
+li {
+  font-size: 18px;
+}
+
+@keyframes ar-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
